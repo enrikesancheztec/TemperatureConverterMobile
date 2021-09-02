@@ -87,4 +87,29 @@ class TemperatureConverterTests: XCTestCase {
         }
         
     }
+    
+    func testDecodeHistory() throws {
+            // Given
+            let json = """
+                [{
+                    "created": "2021-8-29",
+                    "original": {
+                        "value": 15,
+                        "unit": "CELSIUS"
+                    },
+                    "converted": {
+                        "value": 59,
+                        "unit": "FAHRENHEIT"
+                    }
+                }]
+            """.data(using: .utf8)!
+            let decoder = JSONDecoder()
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd"
+            decoder.dateDecodingStrategy = .formatted(dateFormatter)
+            let history = try decoder.decode([TemperatureConversion].self, from: json)
+            
+            XCTAssertEqual(history[0].original.value, 15)
+            XCTAssertEqual(history[0].converted.value, 59)
+        }
 }
