@@ -43,5 +43,20 @@ class ViewController: UIViewController {
             }
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showHistory" {
+            let controller = (segue.destination as! ListViewController)
+            
+            temperatureConverterService.retrieveHistory() {
+                (history) in
+                DispatchQueue.main.async {
+                    controller.history = history
+                    controller.tableView.reloadData()
+                }
+            }
+            
+        }
+    }
 }
 
