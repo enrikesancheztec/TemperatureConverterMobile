@@ -7,7 +7,7 @@
 
 import Foundation
 
-public class Temperature {
+public class Temperature: Codable {
     public let value : Float16
     public let unit: Unit
     
@@ -16,7 +16,7 @@ public class Temperature {
         self.unit = unit
     }
 
-    public enum Unit {
+    public enum Unit: String, Codable {
         case FAHRENHEIT
         case CELSIUS
     }
