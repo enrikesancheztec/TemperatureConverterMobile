@@ -67,4 +67,24 @@ class TemperatureConverterTests: XCTestCase {
         XCTAssertEqual(result.value, expectedValue)
         XCTAssertEqual(result.unit, expectedUnit)
     }
+    
+    func testUnitDecodableEnum() throws {
+        // Given
+        let json = """
+            {
+                "value": 20,
+                "unit": "CELSIUS"
+            }
+        """.data(using: .utf8)!
+        do {
+            // When
+            let temperature = try JSONDecoder().decode(Temperature.self, from: json)
+            
+            // Then
+            XCTAssertEqual(temperature.unit, Temperature.Unit.CELSIUS)
+        } catch {
+            XCTFail("error info: \(error)")
+        }
+        
+    }
 }

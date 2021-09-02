@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8D41D65226D2D659008B387F /* TemperatureConverterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D41D65126D2D659008B387F /* TemperatureConverterService.swift */; };
 		8D50597026C9949A001DCF7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D50596F26C9949A001DCF7B /* AppDelegate.swift */; };
 		8D50597226C9949A001DCF7B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D50597126C9949A001DCF7B /* SceneDelegate.swift */; };
 		8D50597426C9949A001DCF7B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D50597326C9949A001DCF7B /* ViewController.swift */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8D41D65126D2D659008B387F /* TemperatureConverterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureConverterService.swift; sourceTree = "<group>"; };
 		8D50596C26C9949A001DCF7B /* ConvertidorTemperaturaDraft2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConvertidorTemperaturaDraft2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D50596F26C9949A001DCF7B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8D50597126C9949A001DCF7B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +82,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8D41D65026D2D634008B387F /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				8D41D65126D2D659008B387F /* TemperatureConverterService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		8D50596326C9949A001DCF7B = {
 			isa = PBXGroup;
 			children = (
@@ -136,6 +146,7 @@
 		8D5059A226C994DE001DCF7B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				8D41D65026D2D634008B387F /* Services */,
 				8D5059AC26C997B5001DCF7B /* VO */,
 				8D5059A326C99507001DCF7B /* Tools */,
 			);
@@ -294,6 +305,7 @@
 				8D50597026C9949A001DCF7B /* AppDelegate.swift in Sources */,
 				8D5059A526C99555001DCF7B /* TemperatureConverter.swift in Sources */,
 				8D50597226C9949A001DCF7B /* SceneDelegate.swift in Sources */,
+				8D41D65226D2D659008B387F /* TemperatureConverterService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
