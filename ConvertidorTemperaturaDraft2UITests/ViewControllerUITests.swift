@@ -25,18 +25,24 @@ class ViewControllerUITests: XCTestCase {
     }
 
     func testConvertionCelsius0() throws {
-        // UI tests must launch the application that they test.
+        // Given
         let app = XCUIApplication()
         app.launch()
         
+        // When
         let celciusTextField = app.textFields["celsiusTextField"]
         let fahrenheitTextField = app.textFields["fahrenheitTextField"]
         celciusTextField.tap()
         celciusTextField.typeText("0")
+        
+        let notEqualPredicate = NSPredicate(format: "value != %@", "")
+        let convertirExpectation = XCTNSPredicateExpectation(predicate: notEqualPredicate, object: fahrenheitTextField)
+        
         app/*@START_MENU_TOKEN@*/.staticTexts["Convertir"]/*[[".buttons[\"Convertir\"].staticTexts[\"Convertir\"]",".staticTexts[\"Convertir\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        wait(for: [convertirExpectation], timeout: 10.0)
 
+        // Then
         print("Fahrenheit text field " + (fahrenheitTextField.value as! String))
         XCTAssertEqual(fahrenheitTextField.value as! String, "32.0")
     }
-
 }
