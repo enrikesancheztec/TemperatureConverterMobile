@@ -19,14 +19,15 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        celsiusTextField.delegate = self
+        //setupToolbar()
     }
 
     @IBAction func convertir(_ sender: UIButton) {
         fahrenheitTextField.text = ""
         
         if let celsiusValue = celsiusTextField.text {
-            if !celsiusValue.isEmpty {
-                let originalTemperature = Temperature(value: Float16(celsiusValue)!, unit: Temperature.Unit.CELSIUS)
+            if !celsiusValue.isEmpty {                let originalTemperature = Temperature(value: Float16(celsiusValue)!, unit: Temperature.Unit.CELSIUS)
                 
                 temperatureConverterService.convertToFahrenheit(temperature: originalTemperature) {
                     [weak self] (fahrenheitTemperature) in
@@ -87,6 +88,21 @@ class ViewController: UIViewController {
             
         }
     }
+    
+    
+    func setupToolbar(){
+        let bar = UIToolbar()
+       
+        let doneBtn = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(dismissMyKeyboard))
+        let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        bar.items = [flexSpace, flexSpace, doneBtn]
+        bar.sizeToFit()
+        celsiusTextField.inputAccessoryView = bar
+   }
+    
+    @objc func dismissMyKeyboard(){
+        view.endEditing(true)
+    }
 }
 
 extension ViewController: UIDocumentPickerDelegate {
@@ -111,7 +127,15 @@ extension ViewController: UIDocumentPickerDelegate {
             
             do {
                 let readTemperature = try fileTool.readFileAsTemperature(url)
-                self.celsiusTextField.text = String(readTemperature.value)
+                
+                if (readTemperature.unit != Temperature.Unit.CELSIUS) {
+                    let alertController = UIAlertController(title: "Error", message: "Invalid Unit", preferredStyle: UIAlertController.Style.alert)
+                    alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+                    present(alertController, animated: true, completion: nil)
+                } else {
+                    self.celsiusTextField.text = String(readTemperature.value)
+                }
+                
             } catch {
                 print("error trying to convert data to JSON")
             }
@@ -122,6 +146,22 @@ extension ViewController: UIDocumentPickerDelegate {
     
     public func documentPickerWasCancelled(_ controller: UIDocumentPickerViewController) {
         controller.dismiss(animated: true)
+    }
+}
+
+extension ViewController: UITextFieldDelegate {
+    public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    public func textFieldDidEndEditing(_ textField: UITextField) {
+        if (Double(textField.text!) == nil) {
+            textField.text = ""
+            let alertController = UIAlertController(title: "Error", message: "Invalid Value", preferredStyle: UIAlertController.Style.alert)
+            alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+            present(alertController, animated: true, completion: nil)
+        }
     }
 }
 

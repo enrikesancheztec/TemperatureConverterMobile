@@ -57,12 +57,8 @@ class TemperatureFileTool {
     public func saveFile(temperature: Temperature, _ handler: SaveFileClosure) throws {
         let encoder = JSONEncoder()
         let jsonData = try! encoder.encode(temperature)
-        
         let fileManager = FileManager.default
-
-
         let fileURL = fileManager.temporaryDirectory.appendingPathComponent("exported.json")
-            
         try jsonData.write(to: fileURL)
         
         handler(fileURL)

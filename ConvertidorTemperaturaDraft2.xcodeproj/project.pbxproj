@@ -24,6 +24,7 @@
 		8D68A318270114A10012FA4E /* ConversionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D68A317270114A10012FA4E /* ConversionTableViewCell.swift */; };
 		8DA320E126C9C7A200149376 /* ViewControllerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA320E026C9C7A200149376 /* ViewControllerUITests.swift */; };
 		8DCDCE592700FE61004918AF /* TemperatureConverterServiceIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCDCE582700FE61004918AF /* TemperatureConverterServiceIntegrationTests.swift */; };
+		8DD60DE5270FB7E1006A626C /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD60DE4270FB7E1006A626C /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		8D68A317270114A10012FA4E /* ConversionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionTableViewCell.swift; sourceTree = "<group>"; };
 		8DA320E026C9C7A200149376 /* ViewControllerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerUITests.swift; sourceTree = "<group>"; };
 		8DCDCE582700FE61004918AF /* TemperatureConverterServiceIntegrationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemperatureConverterServiceIntegrationTests.swift; sourceTree = "<group>"; };
+		8DD60DE4270FB7E1006A626C /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +137,7 @@
 				8D50597A26C9949C001DCF7B /* LaunchScreen.storyboard */,
 				8D50597D26C9949C001DCF7B /* Info.plist */,
 				8D39BCEA26E065DC00E588CE /* ListViewController.swift */,
+				8DD60DE4270FB7E1006A626C /* DetailViewController.swift */,
 			);
 			path = ConvertidorTemperaturaDraft2;
 			sourceTree = "<group>";
@@ -335,6 +338,7 @@
 				8D50597226C9949A001DCF7B /* SceneDelegate.swift in Sources */,
 				8D39BCEB26E065DC00E588CE /* ListViewController.swift in Sources */,
 				8D68A318270114A10012FA4E /* ConversionTableViewCell.swift in Sources */,
+				8DD60DE5270FB7E1006A626C /* DetailViewController.swift in Sources */,
 				8D41D65226D2D659008B387F /* TemperatureConverterService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
