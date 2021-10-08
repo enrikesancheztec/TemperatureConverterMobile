@@ -127,17 +127,15 @@
 		8D50596E26C9949A001DCF7B /* ConvertidorTemperaturaDraft2 */ = {
 			isa = PBXGroup;
 			children = (
+				8D9847BA270FDB9F00E6629A /* Controllers */,
 				8D68A3162701146A0012FA4E /* View */,
 				8D5059A226C994DE001DCF7B /* Model */,
 				8D50596F26C9949A001DCF7B /* AppDelegate.swift */,
 				8D50597126C9949A001DCF7B /* SceneDelegate.swift */,
-				8D50597326C9949A001DCF7B /* ViewController.swift */,
 				8D50597526C9949A001DCF7B /* Main.storyboard */,
 				8D50597826C9949C001DCF7B /* Assets.xcassets */,
 				8D50597A26C9949C001DCF7B /* LaunchScreen.storyboard */,
 				8D50597D26C9949C001DCF7B /* Info.plist */,
-				8D39BCEA26E065DC00E588CE /* ListViewController.swift */,
-				8DD60DE4270FB7E1006A626C /* DetailViewController.swift */,
 			);
 			path = ConvertidorTemperaturaDraft2;
 			sourceTree = "<group>";
@@ -196,6 +194,16 @@
 				8D68A317270114A10012FA4E /* ConversionTableViewCell.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		8D9847BA270FDB9F00E6629A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8D50597326C9949A001DCF7B /* ViewController.swift */,
+				8D39BCEA26E065DC00E588CE /* ListViewController.swift */,
+				8DD60DE4270FB7E1006A626C /* DetailViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

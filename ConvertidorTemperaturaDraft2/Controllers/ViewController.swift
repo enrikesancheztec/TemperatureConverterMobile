@@ -19,8 +19,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        celsiusTextField.delegate = self
-        //setupToolbar()
+        //celsiusTextField.delegate = self
+        setupToolbar()
     }
 
     @IBAction func convertir(_ sender: UIButton) {

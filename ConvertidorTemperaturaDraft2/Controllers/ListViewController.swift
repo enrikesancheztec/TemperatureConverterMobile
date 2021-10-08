@@ -39,5 +39,16 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         //cell.textLabel!.text = String(temperatureConversion?.original.value ?? 0) + " " + String(temperatureConversion?.converted.value ?? 0)
         return UITableViewCell()
     }
-    
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showDetail" {
+            let controller = (segue.destination as! DetailViewController)
+            
+            if let indexPath = tableView.indexPathForSelectedRow {
+                let selectedConversion = history?[indexPath.row]
+                controller.detailItem = selectedConversion
+            }
+            
+        }
+    }
 }
